@@ -56,7 +56,7 @@ public class BlockOven extends EVBlockOrientable implements ITileEntityProvider 
         super(Material.ROCK, isBurning ? EVNames.LIT_OVEN : EVNames.OVEN);
         this.isBurning = isBurning;
         if (!isBurning) {
-            setCreativeTab(CreativeTabs.FOOD);
+            setCreativeTab(CreativeTabs.DECORATIONS);
         }
         setHardness(3);
     }

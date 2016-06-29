@@ -46,7 +46,7 @@ public class BlockQuern extends EVBlockOrientable implements ITileEntityProvider
 
     BlockQuern() {
         super(Material.ROCK, EVNames.QUERN);
-        setCreativeTab(CreativeTabs.INVENTORY);
+        setCreativeTab(CreativeTabs.DECORATIONS);
         setHardness(3);
     }
 
