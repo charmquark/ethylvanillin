@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "ethylvanillin",
+    "name": "Ethylvanillin",
+    "description": "",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["charmquark"],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

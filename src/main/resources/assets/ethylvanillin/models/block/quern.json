@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "ethylvanillin:blocks/utility/quern/quern_bottom",
+    "top": "ethylvanillin:blocks/utility/quern/quern_top",
+    "side": "ethylvanillin:blocks/utility/quern/quern_side"
+  }
+}

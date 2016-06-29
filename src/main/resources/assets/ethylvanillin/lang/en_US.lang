@@ -1,0 +1,6 @@
+item.ethylvanillin:wheatBread.name=Wheat Bread
+item.ethylvanillin:wheatDough.name=Wheat Dough
+item.ethylvanillin:wheatFlour.name=Wheat Flour
+
+tile.ethylvanillin:oven.name=Oven
+tile.ethylvanillin:quern.name=Quern

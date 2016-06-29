@@ -1,0 +1,8 @@
+{
+  "entity.quern.use": {
+    "category": "block",
+    "sounds": [
+      "ethylvanillin:entity/quern/use1"
+    ]
+  }
+}
