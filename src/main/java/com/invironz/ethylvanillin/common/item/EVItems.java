@@ -25,7 +25,7 @@ public final class EVItems {
         initVanillaOverrides();
         initBasicRecipes();
         initFurnaceRecipes();
-        initQuernRecipes();
+        initGrindingRecipes();
     }
 
     public static void preInit() {
@@ -44,7 +44,7 @@ public final class EVItems {
         GameRegistry.addShapedRecipe(new ItemStack(WHEAT_DOUGH, 4), "fff", "fwf", "fff", 'f', WHEAT_FLOUR, 'w', Items.WATER_BUCKET);
     }
 
-    private static void initQuernRecipes() {
+    private static void initGrindingRecipes() {
         EVRecipes.addGrinding(Items.WHEAT, WHEAT_FLOUR, 3);
     }
 

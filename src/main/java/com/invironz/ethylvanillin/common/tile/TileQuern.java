@@ -4,6 +4,7 @@ import com.invironz.ethylvanillin.common.block.BlockQuern;
 import com.invironz.ethylvanillin.common.block.base.EVBlockOrientable;
 import com.invironz.ethylvanillin.common.item.crafting.GrindingRecipe;
 import com.invironz.ethylvanillin.common.item.crafting.EVRecipes;
+import com.invironz.ethylvanillin.lib.EVLog;
 import com.invironz.ethylvanillin.lib.EVNames;
 import com.invironz.ethylvanillin.common.sound.EVSounds;
 import com.invironz.ethylvanillin.common.tile.base.EVTileEntityContainer;
@@ -21,6 +22,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import static com.invironz.ethylvanillin.common.tile.capabilities.inventory.OneToOneCraftingInventory.SLOT_INPUT;
+import static com.invironz.ethylvanillin.common.tile.capabilities.inventory.OneToOneCraftingInventory.SLOT_OUTPUT;
 
 /**
  * Created by charmquark on 6/9/2016.
@@ -121,10 +123,7 @@ public class TileQuern extends EVTileEntityContainer {
         ++workDone;
         if (workDone < recipe.getWorkNeeded()) return false;
 
-        OneToOneCraftingInventory inventory = (OneToOneCraftingInventory) getInventory();
-        ItemStack                 output    = recipe.getOutput();
-        inventory.consumeAndProduce(1, output, false);
-        workDone = 0;
+        ((OneToOneCraftingInventory) getInventory()).consumeAndProduce(1, recipe.getOutput().copy(), false);
         return true;
     }
 

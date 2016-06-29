@@ -18,8 +18,9 @@ public final class EVNames {
     public static final String PROXY_CLIENT = PROXY_PKG + "ClientProxy";
     public static final String PROXY_SERVER = PROXY_COMMON;
 
-    public static final String OVEN = "oven";
-    public static final String QUERN = "quern";
+    public static final String LIT_OVEN    = "lit_oven";
+    public static final String OVEN        = "oven";
+    public static final String QUERN       = "quern";
     public static final String WHEAT_BREAD = "wheatBread";
     public static final String WHEAT_DOUGH = "wheatDough";
     public static final String WHEAT_FLOUR = "wheatFlour";

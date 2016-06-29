@@ -32,14 +32,9 @@ import java.util.Random;
  */
 public class BlockOven extends EVBlockOrientable implements ITileEntityProvider {
 
-    protected static final PropertyBool BURNING = EVStates.BURNING;
-    protected static final int BURNING_META = FACING_META << 1;
-    protected static final int BURNING_MASK = BURNING_META;
-
-
     public static void setBurning(@Nonnull World world, @Nonnull BlockPos pos, boolean burning) {
         IBlockState state = world.getBlockState(pos);
-        setState(world, pos, state.withProperty(BURNING, burning));
+        setState(world, pos, state);
     }
 
 
@@ -54,9 +49,15 @@ public class BlockOven extends EVBlockOrientable implements ITileEntityProvider 
     }
 
 
-    BlockOven() {
-        super(Material.ROCK, EVNames.OVEN);
-        setCreativeTab(CreativeTabs.FOOD);
+    private boolean isBurning = false;
+
+
+    BlockOven(boolean isBurning) {
+        super(Material.ROCK, isBurning ? EVNames.LIT_OVEN : EVNames.OVEN);
+        this.isBurning = isBurning;
+        if (!isBurning) {
+            setCreativeTab(CreativeTabs.FOOD);
+        }
         setHardness(3);
     }
 
@@ -73,24 +74,8 @@ public class BlockOven extends EVBlockOrientable implements ITileEntityProvider 
     }
 
     @Override @Nonnull
-    public BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, FACING, BURNING);
-    }
-
-    @Override @Nonnull
     public TileEntity createNewTileEntity(@Nonnull World world, int meta) {
         return new TileOven();
-    }
-
-    @Override
-    public int getMetaFromState(IBlockState state) {
-        return super.getMetaFromState(state) | (state.getValue(BURNING) ? 0x08 : 0);
-    }
-
-    @Override
-    public IBlockState getStateFromMeta(int meta) {
-        boolean burning = (meta & BURNING_MASK) != 0;
-        return super.getStateFromMeta(meta).withProperty(BURNING, burning);
     }
 
     @Override
@@ -122,7 +107,7 @@ public class BlockOven extends EVBlockOrientable implements ITileEntityProvider 
         @Nonnull BlockPos pos,
         @Nonnull Random rand
     ) {
-        if (!state.getValue(BURNING)) return;
+        if (!isBurning) return;
         spawnParticles(world, pos, state, rand);
         playSound(world, pos, rand);
     }

@@ -1,0 +1,9 @@
+{
+	"variants": {
+		"inventory": { "model": "ethylvanillin:lit_oven" },
+		"facing=north": { "model": "ethylvanillin:lit_oven" },
+		"facing=east": { "model": "ethylvanillin:lit_oven", "y": 90 },
+		"facing=south": { "model": "ethylvanillin:lit_oven", "y": 180 },
+		"facing=west": { "model": "ethylvanillin:lit_oven", "y": 270 }
+	}
+}

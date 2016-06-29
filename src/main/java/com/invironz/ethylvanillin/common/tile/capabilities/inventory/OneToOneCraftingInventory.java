@@ -23,9 +23,9 @@ public class OneToOneCraftingInventory extends EVItemStackHandler {
             || (stack.isItemEqual(output) && (stack.stackSize + output.stackSize) <= output.getMaxStackSize());
     }
 
-    public void consumeAndProduce(int amount, ItemStack stack, boolean simulate) {
-        extractItem(SLOT_INPUT, 1, simulate);
-        insertItem(SLOT_OUTPUT, stack, simulate);
+    public ItemStack consumeAndProduce(int amount, ItemStack stack, boolean simulate) {
+        super.extractItem(SLOT_INPUT, 1, simulate);
+        return super.insertItem(SLOT_OUTPUT, stack, simulate);
     }
 
     @Override

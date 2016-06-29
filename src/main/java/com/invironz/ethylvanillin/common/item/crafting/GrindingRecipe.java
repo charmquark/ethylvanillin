@@ -1,5 +1,6 @@
 package com.invironz.ethylvanillin.common.item.crafting;
 
+import com.invironz.ethylvanillin.lib.EVLog;
 import net.minecraft.item.ItemStack;
 
 import javax.annotation.Nonnull;
@@ -33,7 +34,7 @@ public class GrindingRecipe implements IEVRecipe {
     }
 
     public boolean matches(@Nonnull ItemStack stack) {
-        boolean match = stack.isItemEqualIgnoreDurability(input);
+        boolean match = stack.isItemEqual(input);
         if (match && !ignoreMetadata) {
             match = stack.getMetadata() == input.getMetadata();
         }

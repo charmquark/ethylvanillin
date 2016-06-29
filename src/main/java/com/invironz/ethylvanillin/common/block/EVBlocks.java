@@ -11,8 +11,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  */
 public class EVBlocks {
 
-    public static final BlockOven  OVEN  = new BlockOven();
-    public static final BlockQuern QUERN = new BlockQuern();
+    public static final BlockOven  LIT_OVEN = new BlockOven(true);
+    public static final BlockOven  OVEN     = new BlockOven(false);
+    public static final BlockQuern QUERN    = new BlockQuern();
 
 
     public static void init() {
@@ -20,6 +21,7 @@ public class EVBlocks {
     }
 
     public static void preInit() {
+        register(LIT_OVEN);
         register(OVEN);
         register(QUERN);
     }

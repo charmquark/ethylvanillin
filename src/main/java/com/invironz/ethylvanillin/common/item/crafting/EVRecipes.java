@@ -13,14 +13,12 @@ import java.util.List;
  */
 public class EVRecipes {
 
-    private static final int GENERIC_STACK_META = 0x7fff;
-
     private static List<IEVRecipe> grindingList = Lists.newArrayList();
 
 
     public static void addGrinding(Item input, Item output, int workNeeded, boolean ignoreMetadata) {
         addGrinding(new GrindingRecipe(
-            new ItemStack(input, 1, GENERIC_STACK_META),
+            new ItemStack(input, 1, 0),
             new ItemStack(output),
             workNeeded,
             ignoreMetadata
@@ -33,7 +31,7 @@ public class EVRecipes {
 
     public static void addGrinding(Item input, ItemStack output, int workNeeded, boolean ignoreMetadata) {
         addGrinding(new GrindingRecipe(
-            new ItemStack(input, 1, GENERIC_STACK_META),
+            new ItemStack(input, 1, 0),
             output,
             workNeeded,
             ignoreMetadata
